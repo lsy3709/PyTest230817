@@ -56,6 +56,8 @@ import random
 
 count = 0
 
+color=['red','blue','green']
+
 while True:
   global r,g,b
   r = random.random()
@@ -63,13 +65,17 @@ while True:
   b = random.random()
 
   t.speed(0)
-  if(count==4):
-    for i in range(100):
+  if(count==1):
+    for i in range(50):
       t.forward(i)
       t.left(144)
+      t.pencolor((r,g,b))
+  if(count==2):
+    for i in range(50):
+      t.forward(i)
+      t.left(134)
       t.pencolor((r, g, b))
-
-   
+  if(count==3):
     count=0
   else:
     count+=1
