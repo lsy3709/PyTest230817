@@ -4,11 +4,12 @@ x = int(input("이진수로 변환할 십진수를 입력하시오 : "))
 binarylist = []
 
 while True:
-    binarylist.append(x % 2)
-    x = x // 2
     if x == 1:
         binarylist.append(x)
         break
+    binarylist.append(x % 2)
+    x = x // 2
+
 
 result = ""
 
