@@ -14,8 +14,8 @@ t.speed(3)  # 거북이 속도 설정
 # s.addcomponent(poly1, "yellow", "black")
 # poly2 = ((0, 0), (10, -5), (-10, -5))
 # s.addcomponent(poly2, "blue", "red")
-turtle.register_shape('trumph.gif')
-t.shape('trumph.gif')
+turtle.register_shape('test.gif')
+t.shape('test.gif')
 
 
 def draw_star():
