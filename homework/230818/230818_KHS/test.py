@@ -1,4 +1,4 @@
-f = open("./230818/ur_voice.txt", "r", encoding='utf-8')
+f = open("./homework/230818/230818_KHS/ur_voice.txt", "r", encoding='utf-8')
 # f 인스턴스에 들어 있는 문장들을 readline 함수를 이용해서 한번에 다 읽고
 ur_voice_lyric = f.readlines()
 print(ur_voice_lyric)

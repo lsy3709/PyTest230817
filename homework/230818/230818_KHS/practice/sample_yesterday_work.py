@@ -1,6 +1,6 @@
 # 파일 입출력에서, 가사 문서를 입력해서(인코딩 타입: ㅕㅅㄹ-8)
 # 메모리상에 f 인스턴스
-f = open("./230818/yesterday.txt", "r", encoding='utf-8')
+f = open("./homework/230818/230818_KHS/yesterday.txt", "r", encoding='utf-8')
 # f 인스턴스에 들어 있는 문장들을 readline 함수를 이용해서 한번에 다 읽고
 yesterday_lyric = f.readlines()
 print(yesterday_lyric)
