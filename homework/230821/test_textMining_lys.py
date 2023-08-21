@@ -1,11 +1,3 @@
-#test_textMining.py  파일 참고해서,
-#관심있는 기사의 내용을 가지고와서,
-#이 기사에서 많이 사용된 단어의 빈도수의 탑 10을 뽑아보기.
-
-#풀리퀘스트
-#homework-> 230821 폴더 - > 각자 자기이름으로 작업해서,
-#파일명 
-
 
 from collections import defaultdict, OrderedDict
 
