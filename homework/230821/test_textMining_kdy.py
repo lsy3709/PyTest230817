@@ -25,20 +25,6 @@ text = '''
 
 
 
-# def get_tags(text, ntags = 10):
-#     spliter = text()
-#     nonus = spliter.nonus(text)
-
-#     count = Counter(nonus)
-
-#     return_list = []
-#     for n, c in count.most_common(ntags):
-#         temp = {'tag' : n, 'count' : c}
-#         return_list.append(temp)
-    
-#     print(f"count 의 결괏값 : {count}")
-
-
 d = defaultdict(lambda : 0) #Default 값을 0으로 지정
 
 d = defaultdict(list) #Default 값을 list로 지정
