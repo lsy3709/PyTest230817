@@ -54,3 +54,12 @@ test_OrderedDict = OrderedDict(sorted(word_count.items(), key=lambda t: t[1],
 print(f"test_OrderedDict 의 결괏값 전체: {test_OrderedDict}")
 for i, v in test_OrderedDict:
     print(f"test_OrderedDict 의 결괏값 요소: i : {i},v : {v} ")
+# top 10 뽑아내기.
+convertedList = list(test_OrderedDict)
+print(f"top 10 결과값: {convertedList[:10]}")
+# 전역으로 i2  선언,
+i2 = 1
+for i in convertedList[:10]:
+    print(f"i의 형식 : {i}")
+    print(f" {i2}순위 ,단어: {i[0]}, 빈도수: {i[1]}개")
+    i2 += 1
