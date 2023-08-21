@@ -63,3 +63,12 @@ test_OrderedDict = OrderedDict(sorted(word_count.items(), key=lambda t:t[1], rev
 
 for i, v in test_OrderedDict:
     print(f"test_OrderedDict의 결과값 요소 : i : {i}, v : {v}")
+
+# Top10 뽑기
+count = 0
+for word, frequency in test_OrderedDict:
+    if count < 10:
+        print(f"{word}: {frequency}")
+        count += 1
+    else:
+        break
