@@ -23,8 +23,8 @@ def loadImage(fname):
             tmpList2.append(tempdata)
         # 한 라인의 rgb 값을 inImage에 넣어줌
         inImage.append(tmpList)
-        print(f"{i}번째 rgb값 리스트 -- {tmpList}")
-        print(f"{i}번째 유니코드리스트 -- {tmpList2}")
+        #print(f"{i}번째 rgb값 리스트 -- {tmpList}")
+        #print(f"{i}번째 유니코드리스트 -- {tmpList2}")
     fp.close()
 
 
