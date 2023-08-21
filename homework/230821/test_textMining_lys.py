@@ -1,7 +1,6 @@
 
 from collections import defaultdict, OrderedDict
-
-
+#brachtest
 text='''
 "축구 슈퍼스타 리오넬 메시가 지난 6월 프랑스 파리 생제르맹을 떠나 미국 인터 마이애미로 이적한 이후 티켓 가격이 천정부지로 치솟고 있다.
 20일(현지시간) CNBC는 메시 이적 이후 미국 내 시즌 후반 경기 티켓 가격이 중고시장에서 전년 대비 1700% 이상 급등했다고 보도했다.
