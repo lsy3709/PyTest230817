@@ -37,5 +37,7 @@ for word in text :
 test_OrederedDict = OrderedDict(sorted(word_count.items(), key=lambda t: t[1],
                                        reverse=True)).items()
 # print(f"전체 : {test_OrederedDict}")
-for i, v in test_OrederedDict :
+for idx, (i, v) in enumerate(test_OrederedDict, 1) :
     print(f"단어 : {i}, 횟수 : {v}")
+    if idx == 10:
+        break
