@@ -2,9 +2,13 @@ from tkinter import *
 
 ## 함수 선언 부분 ##
 
+# 메모리 -> 출력함수
+
 
 def loadImage(fname):
     global inImage, XSIZE, YSIZE
+    # rb -> read byte 이진값으로 읽는다. b가 없으면 기본 문자열로 읽는다.
+    # inputStream, fileInputStream
     fp = open(fname, 'rb')
 
     for i in range(0, XSIZE):
@@ -13,7 +17,9 @@ def loadImage(fname):
             data = int(ord(fp.read(1)))
             tmpList.append(data)
             # 출력 data = int(ord(fp.read(1)))
-            print(f'data 값: {data}')
+            # print(f'data 값: {data}')
+            print(f"fp.read(1) : {fp.read(1)}")
+            # print(f"ord(fp.read(1)) : {ord(fp.read(1))}")
         inImage.append(tmpList)
         # 출력 tmpList
         print(f'tmpList: {tmpList}')
