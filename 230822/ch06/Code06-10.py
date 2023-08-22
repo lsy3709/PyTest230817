@@ -45,18 +45,20 @@ workSheet = makeEmptySheet(rowNum, colNum)
 
 # csvList csv 파일의 내용이 임시로 저장 되어 있는 이중 리스트
 idx = 6  # 평균 키의 인덱스
+idx2 = 2  # 인원수 의 인덱스
 for i in range(0, rowNum):  # 워크시트에 리스트값 채우기. (= 각 빈 셀에 값 넣기)
     for k in range(0, colNum):
         # 각행의 6번째 컬럼의 타입이 일단 숫자인지 체크
-        if (csvList[i][idx].isnumeric()):
+        if (csvList[i][idx2].isnumeric()):
             # 해당 각행의 6번째 컬럼의 값의 조건 167 이상이 맞는지
-            if (int(csvList[i][idx]) >= 167):
+            if (int(csvList[i][idx2]) >= 6):
                 # 각행의 셀에 대해서
                 ent = workSheet[i][k]
                 # 각행의 배경색 노란색 변경
                 ent.configure(bg='yellow')
         # GUI 각 셀에 값을 입력을 하는 부분.
         # csvList 에 실제 값이 들어 있음.
+
         workSheet[i][k].insert(0, csvList[i][k])
 
 window.mainloop()
