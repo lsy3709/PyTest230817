@@ -1,4 +1,6 @@
-with open("C:/CookAnalysis/CSV/singer2.csv", "r") as inFp :
+# 주의 사항, 단위 원 1000 단위로 콤마를 하는 부분에 대해서 오류가 발생.
+
+with open("C:/CookAnalysis/CSV/singer2.csv", "r") as inFp:
     header = inFp.readline()
     header = header.strip()
     header_list = header.split(',')
