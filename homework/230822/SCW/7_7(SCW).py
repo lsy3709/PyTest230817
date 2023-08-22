@@ -2,7 +2,7 @@ import xlwt
 import csv
 import os
 
-csvFileList = ["C:/CookAnalysis/CSV/TestA.csv", "C:/CookAnalysis/CSV/TestB.csv"]
+csvFileList = ["C:/CookAnalysis/CSV/TestA.csv", "C:/CookAnalysis/CSV/TestB.csv","C:/CookAnalysis/CSV/TestC.csv"]
 outWorkbook = xlwt.Workbook()
 
 for csvFileName in csvFileList :
