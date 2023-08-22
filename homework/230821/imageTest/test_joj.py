@@ -11,14 +11,14 @@ def loadImage(fname):
         tmpList = []
         for k in range(0, YSIZE):
             data = int(ord(fp.read(1)))
-            #
+            # print(f"int(ord(fp.read(1))) 출력 : {int(ord(fp.read(1)))}")
+
             tmpList.append(data)
-        print(f"int(ord(fp.read(1))) 출력 : {int(ord(fp.read(1)))}")
-        print(f"tmpList 출력 : {tmpList}")
+        # print(f"tmpList 출력 : {tmpList}")
         inImage.append(tmpList)
 
     print(f"data 출력 : {data}")
-    print(f"inImage 출력 : {inImage}")
+    # print(f"inImage 출력 : {inImage}")
 
     fp.close()
 
@@ -32,8 +32,8 @@ def displayImage(image):
             data = image[i][k]
             tmpString += "#%02x%02x%02x " % (data, data, data)  # x 뒤에 한칸 공백
         rgbString += "{" + tmpString + "} "  # } 뒤에 한칸 공백
-    print(f"tmpString 출력 : {tmpString }")
-    print(f"rgbString 출력 : {rgbString }")
+    # print(f"tmpString 출력 : {tmpString }")
+    # print(f"rgbString 출력 : {rgbString }")
     paper.put(rgbString)
 
 
