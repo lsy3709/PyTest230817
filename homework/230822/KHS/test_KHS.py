@@ -20,7 +20,7 @@ csvList = []
 rowNum, colNum = 0, 0
 workSheet = []
 
-# 메인 코드부
+# 메인 코드부//
 window = Tk()
 
 with open("C:/CookAnalysis/CSV/singer1.csv", "r") as inFp:
