@@ -17,7 +17,6 @@ ssl_context = ssl.SSLContext()
 ssl_context.verify_mode = ssl.CERT_NONE
 img, title, auth, publisher, date, price = "", "", "", "", "", ""
 null = None
-# 함수 선언 부분
 
 
 def clean_text(inputString):
@@ -38,37 +37,15 @@ def insertData(img, title, auth, publisher, date, price):
         charset="utf8",
     )
     cur = con.cursor()
-    #    title` VARCHAR(200) NULL,
-    #   `publisher` VARCHAR(45) NULL,
-    #   `newsDate` VARCHAR(10) NULL,
-    #   `newsTime` VARCHAR(6) NULL,
-    #   `newsDetail` VARCHAR(200) NULL,
-    #   `newsImgUrl` VARCHAR(200) NULL,
-    # data0 = data10
+
     data1 = img
     data2 = title
     data3 = auth
     data4 = publisher
     data5 = date
     data6 = price
-    # data1 = clean_text(subject)
-    # data2 = clean_text(press)
-    # data3 = clean_text(pDate)
-    # data4 = clean_text(pTime)
-    # data5 = clean_text(link)
-    # data6 = clean_text(imgLinkUrl)
     #
     try:
-        # print(null)
-        # print("데이터 실행전 확인")
-        # print(data1)
-        # print(data2)
-        # print(data3)
-        # print(data4)
-        # print(data5)
-        # print(data6)
-        # query = "INSERT INTO newsTable (title, publisher, newsDate, newsTime, newsDetail, newsImgUrl) VALUES (?, ?, ?, ?, ?, ?)"
-        # values = (data1, data2, data3, data4, data5, data6)
         sql = (
             "INSERT INTO itproduct (imgLinkUrl, title, auth, pub, date, price)  VALUES('"
             + data1
@@ -84,22 +61,16 @@ def insertData(img, title, auth, publisher, date, price):
             + data6
             + "')"
         )
-        # print("순서2 : sql 실행전 ")
-        # print(f"sql : {sql}")
 
         cur.execute(sql)
-
-        # cur.execute(query, values)
     except:
         print("================================")
         print("순서3 : 예외 발생")
         print("================================")
-        # messagebox.showerror('오류', '데이터 입력 오류가 발생함')
     else:
         print("================================")
         print("순서3: 성공")
         print("================================")
-        # messagebox.showinfo('성공', '데이터 입력 성공')
     con.commit()
     con.close()
 
@@ -111,7 +82,6 @@ offset = 0
 yes24Url = "https://www.yes24.com/24/Category/Display/001001003022?PageNumber=" + (str)(
     page
 )
-print("yes24 신규 IT 책 목록")
 while True:
     if count != 21:
         try:
@@ -123,7 +93,8 @@ while True:
                 if count != 21:
                     # strong -> h2 변경 230629 (확인 날짜)
                     # img, titleUrl, auth, publisher, date, price
-                    title = tag.find("div", {"class": "goods_name"}).text
+                    title = tag.find("div", {"class": "goods_name"}, "a").text
+                    clean_text(title)
                     price = tag.find("em", {"class": "yes_b"}).text
                     imgLink = tag.find("span", {"class": "imgBdr"}, "a")
                     # 이미지 없는 경우 처리 부분. 파이썬 null 대신  None
@@ -136,16 +107,18 @@ while True:
                     auth = tag.find("div", {"class": "goods_pubGrp"}, "span").text
 
                     publisher = tag.find("span", {"class": "goods_pub"}).text
-
+                    clean_text(publisher)
                     date = tag.find("span", {"class": "goods_date"}).text
+                    if count == 0:
+                        print("yes24 IT 책 목록")
 
-                    print("순서1: 데이터 추가 전")
-                    print("title: %s" % (title))
-                    print("auth: %s" % (auth))
-                    print("publisher: %s" % (publisher))
-                    print("date: %s" % (date))
-                    print("price: %s" % (price))
-                    print("count : %d" % count)
+                    print(" 데이터 추가 전")
+                    print("title:%s" % (title))
+                    print("auth:%s" % (auth))
+                    print("publisher:%s" % (publisher))
+                    print("date:%s" % (date))
+                    print("price:%s원" % (price))
+                    print("count :%d" % count)
                     print("================================")
                     print("================================")
                     insertData(imgLinkUrl, title, auth, publisher, date, price)
@@ -155,4 +128,4 @@ while True:
             break
     else:
         break
-        # time.sleep(60)
+        time.sleep(10)
