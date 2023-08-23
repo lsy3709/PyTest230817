@@ -2,8 +2,12 @@ import bs4
 import urllib.request
 import csv
 
-## 함수 선언부
-def getBookInfo(book_tag) :
+# yes24  -> csv
+
+# 함수 선언부
+
+
+def getBookInfo(book_tag):
     names = book_tag.find("div", {"class": "goods_name"})
     bookName = names.find("a").text
     auths = book_tag.find("span", {"class": "goods_auth"})
@@ -13,18 +17,19 @@ def getBookInfo(book_tag) :
     bookPrice = book_tag.find("em", {"class": "yes_b"}).text
     return [bookName, bookAuth, bookPub, bookDate, bookPrice]
 
-## 전역 변수부
+
+# 전역 변수부
 url = "http://www.yes24.com/24/Category/Display/001001003022004?ParamSortTp=05&PageNumber="
 pageNumber = 1
 
-## 메인 코드부
-csvName =  'c:/CookAnalysis/CSV/pythonBook.csv'
+# 메인 코드부
+csvName = 'c:/CookAnalysis/CSV/pythonBook_230823.csv'
 with open(csvName, 'w', newline='') as csvFp:
     csvWriter = csv.writer(csvFp)
     csvWriter.writerow(['책이름', '저자', '출판사', '출간일', '가격'])
 
-while True :
-    try :
+while True:
+    try:
         bookUrl = url + str(pageNumber)
         pageNumber += 1
 
@@ -40,7 +45,7 @@ while True :
                 csvWriter = csv.writer(csvFp)
                 csvWriter.writerow(info_list)
 
-    except :
+    except:
         break
 
 print('Save. OK~')
