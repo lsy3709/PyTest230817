@@ -48,7 +48,7 @@ print(f"test_OrderdDict 의 결과값 전체 : {test_OrderdDict}")
  
 
 for i, v in test_OrderdDict :
-    if v >= 3:
+    if v >= 3 :
         print(f"test_OrderedDict 의 결과값 요소 i :{i}, v :{v}")
 
     
