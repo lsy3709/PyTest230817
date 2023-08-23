@@ -3,6 +3,7 @@ import urllib.request
 import ssl
 import pymysql
 import re
+import time
 
 ssl_context = ssl.SSLContext()
 ssl_context.verify_mode = ssl.CERT_NONE
@@ -66,8 +67,13 @@ try:
             if imgLink and imgLink.has_attr('style'):
                 imgLinkUrl = re.search(
                     r"url\('(.*)'\)", imgLink['style']).group(1)
-            desc = clean_text(
-                tag.find('div', {'class': 'desc ellipsis'}).text.strip())
+            # Find the desc element
+            desc_elem = tag.find('div', {'class': 'desc ellipsis'})
+            desc = '설명이 없습니다'  # Default value in case desc element is not found
+            if desc_elem:  # Check if desc element is found
+                # Update desc with actual value
+                desc = clean_text(desc_elem.text.strip())
+
             price = clean_text(tag.find('div', {'class': 'price'}).find(
                 'h6', {'class': 'won'}).text.strip())
 
@@ -82,6 +88,7 @@ try:
             print('================================')
             insertData(title, desc, price, link, imgLinkUrl)
             count += 1
+        time.sleep(60)
 
 except Exception as e:
     print(e)
