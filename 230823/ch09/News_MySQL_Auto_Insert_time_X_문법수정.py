@@ -62,18 +62,18 @@ def insertData(subject, press, pDate, pTime, link, imgLinkUrl):
         # print(data4)
         # print(data5)
         # print(data6)
-        # query = "INSERT INTO newsTable (title, publisher, newsDate, newsTime, newsDetail, newsImgUrl) VALUES (?, ?, ?, ?, ?, ?)"
+        query = "INSERT INTO newsTable (title, publisher, newsDate, newsTime, newsDetail, newsImgUrl) VALUES (%s, %s, %s, %s, %s, %s)"
         # 문법 틀린 부분 ? -> %s 변경시 됨.
-        # values = (data1, data2, data3, data4, data5, data6)
-        sql = "INSERT INTO newsTable (title,publisher,newsDate,newsTime,newsDetail,newsImgUrl)  VALUES('" + \
-            data1 + "','" + data2 + "','" + data3 + "','" + \
-            data4 + "','" + data5 + "','"+data6 + "')"
+        values = (data1, data2, data3, data4, data5, data6)
+        # sql = "INSERT INTO newsTable (title,publisher,newsDate,newsTime,newsDetail,newsImgUrl)  VALUES('" + \
+        #     data1 + "','" + data2 + "','" + data3 + "','" + \
+        #     data4 + "','" + data5 + "','"+data6 + "')"
         print("순서2 : sql 실행전 ")
         print(f"sql : {sql}")
 
-        cur.execute(sql)
+        # cur.execute(sql)
 
-        # cur.execute(query, values)
+        cur.execute(query, values)
     except:
         print('================================')
         print("순서3 : 예외 발생")
