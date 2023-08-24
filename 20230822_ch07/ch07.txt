@@ -1,0 +1,28 @@
+Code07-01
+Xls 파일 읽기 행 , 열 개수
+Code07-02
+Xls 콘솔에 출력
+Code07-03
+Xls 평균 집계
+Code07-04
+Xls 파일 쓰기
+Code07-05
+Xls 특정 조건 파일 쓰기
+Code07-06
+Xls -> csv 워크시트 이름으로 저장.
+Code07-07
+xls 2개 -> csv 하나로 합치기.
+Code07-08
+Xls -> csv 쓰기.
+
+Code07-09
+Xlsx -> 콘솔 출력.
+Code07-10
+Xlsx -> xlsx 읽고 , 쓰기.
+
+Code07-11
+Gif 읽기, 각 RGB 값 출력.
+Code07-12
+Gif -> xlsx 코드값 엑셀 셀안에 값표시
+Code07-13
+각 픽셀에 색 지정.
