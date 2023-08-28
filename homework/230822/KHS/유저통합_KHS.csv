@@ -1,0 +1,10 @@
+id,email,password
+1,john@example.com,securepass123
+2,jane@example.com,mysecretword
+3,alex@example.com,letmein456
+101,user1@example.com,security
+102,user2@example.com,wordbest
+103,user3@example.com,letitgo
+A1,troll@example.com,trollZZAng
+B1,Orc@example.com,ORcisBest
+C1,goblin@example.com,GoblinWinner
