@@ -1,0 +1,31 @@
+mongos> sh.status()
+--- Sharding Status ---
+  sharding version: {
+        "_id" : 1,
+        "minCompatibleVersion" : 5,
+        "currentVersion" : 6,
+        "clusterId" : ObjectId("64eda28e2644ead5865d55d2")
+  }
+  shards:
+        {  "_id" : "shard0",  "host" : "shard0/10.100.103.21:27022,10.100.103.71:27021",  "state" : 1 }
+  active mongoses:
+        "4.4.24" : 3
+  autosplit:
+        Currently enabled: yes
+  balancer:
+        Currently enabled:  yes
+        Currently running:  no
+        Failed balancer rounds in last 5 attempts:  0
+        Migration Results for the last 24 hours:
+                No recent migrations
+  databases:
+        {  "_id" : "car_accident",  "primary" : "shard0",  "partitioned" : false,  "version" : {  "uuid" : UUID("fce1f014-5710-4b30-8c90-ae2330d586e7"),  "lastMod" : 1 } }
+        {  "_id" : "config",  "primary" : "config",  "partitioned" : true }
+                config.system.sessions
+                        shard key: { "_id" : 1 }
+                        unique: false
+                        balancing: true
+                        chunks:
+                                shard0  1024
+                        too many chunks to print, use verbose if you want to force print
+        {  "_id" : "test",  "primary" : "shard0",  "partitioned" : false,  "version" : {  "uuid" : UUID("8ece7f7a-914d-45ed-9865-b21a5096bbd8"),  "lastMod" : 1 } }
